@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/src/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <script defer type="module" src="src/pages/Login/index.ts"></script>
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="sections">
+    <section class="main_section">
+      <aside class="menuAside">
+  
+        <div class="home_search">
+          <ul class="home_search_ul">
+  
+            <li class="home_search_li">
+              <a class="anchor active_anchor" href=""><div class="svg_img_one"></div><span>Главная</span></a>
+            </li>
+  
+            <li class="home_search_li">
+              <a class="anchor" href=""><div class="svg_img_two"></div><span>Поиск</span></a>  
+            </li>
+          </ul>
+        </div>
+  
+        <div class="my_methody">
+          <header class="methody_header">
+            <button class="methody_btn">
+              <img src="/img/methodysvg.svg" alt="">
+              <span>Моя методика</span>
+            </button>
+            <div class="btns_div">
+              <button class="addPlaylist">+</button>
+              <button class="addPlaylist"><p class="arrow">→</p></button>  
+            </div>
+          </header>
+  
+          <div class="ListSections">
+            <section class="first_playlist">
+              <div class="spans">
+                <span class="firstListSpan">Создай свой первый плейлист</span>
+                <span class="secondListSpan">Это совсем не сложно! Мы поможем.</span>  
+              </div>
+              <div class="doPlayListBtn">
+                <button class="pl_obzor"><span>Создать плейлист</span></button>
+              </div>
+            </section>
+    
+            <section class="first_playlist">
+              <div class="spans">
+                <span class="firstListSpan">Подпишись на интересные подкасты</span>
+                <span class="secondListSpan">Ты будешь узнавать о новых выпусках.</span>  
+              </div>
+              <div class="doPlayListBtn">
+                <button class="obzor"><span>Обзор</span></button>
+              </div>
+            </section>
+          </div>
+          
+        </div>
+      </aside>
+    </section>
+
+    <section class="center_section">
+      <header class="center_section_header">
+        <div class="latest_pages_nav">
+          <button class="back">
+            <img src="/img/back.svg" alt="">
+          </button>
+          <button class="next">
+            <img src="/img/next.svg" alt="">
+          </button>
+        </div>
+        <div class="app_premiumBtns">
+          <button class="premium"><span>Узнать больше о Premium</span></button>
+          <a class="loadApp" href="" draggable="false">
+            <span>Установить приложение</span>
+          </a>
+          <button class="something_new">
+            <div class="svgDiv">
+              <svg data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI"><path d="M8 1.5a4 4 0 0 0-4 4v3.27a.75.75 0 0 1-.1.373L2.255 12h11.49L12.1 9.142a.75.75 0 0 1-.1-.374V5.5a4 4 0 0 0-4-4zm-5.5 4a5.5 5.5 0 0 1 11 0v3.067l2.193 3.809a.75.75 0 0 1-.65 1.124H10.5a2.5 2.5 0 0 1-5 0H.957a.75.75 0 0 1-.65-1.124L2.5 8.569V5.5zm4.5 8a1 1 0 1 0 2 0H7z"></path></svg>
+            </div>
+          </button>
+          <button class="avatarBtn">
+            <img src="/img/avatar.svg" alt="">
+          </button>
+        </div>
+      </header>
+
+      <div class="types_btn">
+        <button class="typesButton active_btn">Все</button>
+        <button class="typesButton">Музыка</button>
+        <button class="typesButton">Подкасты</button>
+      </div>
+
+      <div class="listen_this_shows">
+        <div class="name_div">
+          <h1><a href="#">Послушай эти шоу</a></h1>
+          <a class="show_all_anchor" href="#">Показать все</a>
+        </div>
+        <section class="shows_Section"></section>
+        <div class="name_div">
+          <h1><a href="#">Не пропусти топовые плейлисты</a></h1>
+          <a class="show_all_anchor" href="#">Показать все</a>
+        </div>
+        <section class="top_playlistsSection"></section>
+        <div class="name_div">
+          <h1><a href="#">Популярные радиостанции</a></h1>
+          <a class="show_all_anchor" href="#">Показать все</a>
+        </div>
+        <section class="popular_radio"></section>
+        <div class="name_div">
+          <h1><a href="#">Рекомендованные подборки</a></h1>
+          <a class="show_all_anchor" href="#">Показать все</a>
+        </div>
+        <section class="rec_podbors"></section>
+        <div class="name_div">
+          <h1><a href="#">#SpocifyWrapped</a></h1>
+          <a class="show_all_anchor" href="#">Показать все</a>
+        </div>
+        <section class="spwrapped_div"></section>
+        <footer class="sectionsFooter"></footer>
+      </div>
+
+
+    </section>
+
+    <aside class="svedeniya_aside">
+
+    </aside>
+
+    <!-- <aside class="svedeniya_aside">
+    </aside> -->
+  </div>
+
+
+  <div class="player_section"></div>
+
+
+    <script type="module" src="/src/components/shows.ts"></script>
+    <script type="module" src="src/main.ts"></script>
+</body>
+</html>
