@@ -33,6 +33,7 @@ export function rightAside(item: any) {
     }
 
 
+    close_aside.classList.add("close_asideBtn")
     same_name.classList.add("same_name")
     settings.classList.add("settings")
     topside_div.classList.add("topside_div")

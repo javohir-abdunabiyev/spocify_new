@@ -14,8 +14,12 @@ const rec_podbors_place = document.querySelector(".rec_podbors") as HTMLElement
 const spwrapped_place = document.querySelector(".spwrapped_div") as HTMLElement 
 const main_page_footer = document.querySelector(".sectionsFooter") as HTMLElement
 const center_section = document.querySelector(".center_section") as HTMLElement
+const rightAside_close = document.querySelector(".close_asideBtn") as HTMLButtonElement
+const svedeniya_aside = document.querySelector(".svedeniya_aside") as HTMLElement
 let slice_count = 5
 let search_svg_color = "grey"
+
+
 
 
 if (!token) {

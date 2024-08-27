@@ -47,35 +47,21 @@ export function showsLoad(item: any) {
 
     playbtn_div.onclick = () => {
 
-        if(item.type === "playlist") {
-            getData(`/playlists/${item.id}`)
-                .then(res => {
-                    console.log(res);
-                    reload([res], rightAside, rightaside_place)
-                })
-        } else if (item.type === "show") {
-            getData(`/shows/${item.id}`)
-                .then(res => {
-                    console.log(res);
-                    reload([res], rightAside, rightaside_place)
-
-                })
-        } else if (item.type === "track") {
-            getData(`/tracks/${item.id}`)
-                .then(res => {
-                    console.log(res);
-                    reload([res], rightAside, rightaside_place)
-
-                })
-        }    
+        getData(`/${item.type + "s"}/${item.id}`)
+            .then(res => {
+                reload([res], rightAside, rightaside_place)
+            })    
     }
 
-    if(center_section.style.width <= "900px") {
+
+
+    if(center_section.style.width > "900px") {
+        img.classList.remove("showImg_bigger")
+        div.classList.remove("sectionsimgdiv_bigger")
+    } else if(center_section.style.width <= "900px") {
         img.classList.add("showImg_bigger")
         div.classList.add("sectionsimgdiv_bigger")
     }
-
-
 
     playbtn_div.append(playbtn)
 
