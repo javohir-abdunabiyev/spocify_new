@@ -1,9 +1,13 @@
 import { getData } from "../lib/idnex";
 import { reload } from "../lib/reload";
 import { rightAside } from "./rightaside";
+import { addPlayer } from "./player";
 
-const rightaside_place = document.querySelector(".svedeniya_aside") as HTMLElement
+const rightaside_place = document.querySelector(".right_aside_plcd") as HTMLElement
 const center_section = document.querySelector(".center_section") as HTMLElement
+const player_section = document.querySelector(".player_section") as HTMLElement
+
+
 
 
 export function showsLoad(item: any) {
@@ -46,14 +50,29 @@ export function showsLoad(item: any) {
 
 
     playbtn_div.onclick = () => {
+        const trackInfo = {
+            id: item.id,
+            type: item.type + "s"
+        };
+        localStorage.setItem('currentTrack', JSON.stringify(trackInfo));
 
         getData(`/${item.type + "s"}/${item.id}`)
             .then(res => {
+                console.log(res);
                 reload([res], rightAside, rightaside_place)
-            })    
+                reload([res], addPlayer, player_section)
+            })
     }
 
+    const savedTrack = localStorage.getItem('currentTrack');
 
+    if (savedTrack) {
+        const { id, type } = JSON.parse(savedTrack);
+        getData(`/${type}/${id}`)
+            .then(res => {
+                reload([res], rightAside, rightaside_place);
+            });
+    }
 
     if(center_section.style.width > "900px") {
         img.classList.remove("showImg_bigger")
