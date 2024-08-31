@@ -3,12 +3,9 @@ import { reload } from "../lib/reload";
 import { rightAside } from "./rightaside";
 import { addPlayer } from "./player";
 
-const rightaside_place = document.querySelector(".right_aside_plcd") as HTMLElement
+const rightaside_place = document.querySelector(".right_aside_pl") as HTMLElement
 const center_section = document.querySelector(".center_section") as HTMLElement
 const player_section = document.querySelector(".player_section") as HTMLElement
-
-
-
 
 export function showsLoad(item: any) {
     const div = document.createElement("div");

@@ -112,6 +112,9 @@ export function addPlayer(item: any) {
     }
 
 
+    if (name.innerHTML.length > 40) {
+        name.innerHTML = name.innerHTML.substring(0, 30) + '...';
+    }
 
 
     display_not_cover_btn.append(display_not_cover_btn_div)
