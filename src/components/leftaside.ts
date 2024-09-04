@@ -38,9 +38,18 @@ export function addleftAside(place: any) {
     const playlistBtnSpan2 = document.createElement("span");
 
 
-    anchor2.href = "#";
-    anchor1.href = "#";
+    anchor1.href = "/";
+    anchor2.href = "/src/pages/search/";
 
+    anchor1.onclick = () => {
+        anchor2.classList.remove("active_anchor")
+        anchor1.classList.add("active_anchor")
+    }
+
+    anchor2.onclick = () => {
+        anchor1.classList.remove("active_anchor")
+        anchor2.classList.add("active_anchor")
+    }
 
     span1.textContent = "Главная";
     span2.textContent = "Поиск";
@@ -118,5 +127,4 @@ export function addleftAside(place: any) {
     menuAside.append(homeSearch, myMethody);
 
     place.append(menuAside)
-
 }

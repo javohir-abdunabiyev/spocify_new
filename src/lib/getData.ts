@@ -7,7 +7,7 @@ export async function getData(path: any): Promise<any> {
     try {
         const res = await axios.get(base + path, {
             headers: {
-                Authorization: `Bearer ${token}`
+                Authorization: `Bearer ${token}` 
             }
         });
         return res.data

@@ -1,0 +1,132 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.top_side_div {
+    display: flex;
+    gap: 20px;
+    color: white;
+
+}
+
+.topsideTracks_img {
+    width: 197px;
+    height: 197px;
+    border-radius: 4px;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, .5);
+}
+
+.topside_trTope {
+    font-weight: 400;
+    font-size: 0.900rem;
+}
+
+.topsideTrName {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.topsideTrOwner {
+    font-weight: 400;
+    font-size: 0.900rem;
+}
+
+.spocify_logo_topSide {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.tracks_amount_div {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.about_track_div_topSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.backdrop {
+    background: linear-gradient(180deg, rgba(30,215,96,0.8) 0%, rgba(30,215,96,0.5) 100%);
+    width: 100%;
+    height: 285px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.center_section {
+    position: relative;
+    z-index: 0;
+}
+
+.miniplayer_playBtn {
+    cursor: pointer;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #1ed760;
+    padding: 20px;
+}
+
+.miniplayer_playBtn:hover {
+    width: 57px;
+    height: 57px;
+    padding: 21px;
+}
+
+.miniplayerplaybtn_img {
+    width: 16px;
+    height: 16px;
+}
+
+.addtomediatekBtn svg {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.addtomediatekBtn svg:hover {
+    width: 31px;
+    height: 31px;
+    fill: white;
+}
+
+.menu_dots svg {
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+}
+
+.menu_dots svg:hover {
+    width: 29px;
+    height: 29px;
+    fill: white;
+}
+
+.miniplayer_playbtn_div {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.list_div {
+    display: flex;
+    gap: 8px;
+}
+
+.list_div:hover {
+    color: white;
+    svg {
+        fill: white;
+    }
+}

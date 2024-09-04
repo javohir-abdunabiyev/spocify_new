@@ -1,10 +1,11 @@
 import { showsLoad } from "./components/shows";
-import { getData } from "./lib/idnex";
-import { reload } from "./lib/reload";
+import { getData } from "./lib/getData";
+import { reload } from "./components/reload";
 import { footerLoad } from "./components/footer";
 import { addleftAside } from "./components/leftaside";
 import { rightAside } from "./components/rightaside";
-// import { rightAside } from "./components/rightaside";
+import { header } from "./components/header";
+
 
 let token = localStorage.getItem("access_token");
 const showsPlace = document.querySelector(".shows_Section") as HTMLElement
@@ -16,11 +17,11 @@ const main_page_footer = document.querySelector(".sectionsFooter") as HTMLElemen
 const center_section = document.querySelector(".center_section") as HTMLElement
 const left_aside_place = document.querySelector(".main_section") as HTMLElement
 const right_aside_place = document.querySelector(".right_aside_pl") as HTMLElement
-
+const header_place = document.querySelector(".header_place") as HTMLElement
+const anchors = document.querySelectorAll(".anchor")
 let slice_count = 5
 
-
-// svedeniya_aside
+header(header_place)
 
 if (!token) {
   location.assign("/src/pages/Login/")

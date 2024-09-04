@@ -23,13 +23,10 @@ export function rightAside(item: any) {
     const sam_ispolnitel = document.createElement("a")
     const producer_txt = document.createElement("p")
     const subscribe_btn = document.createElement("button")
-
     const next_in_queue_div = document.createElement("div")
     const next_in_queue_top_side_div = document.createElement("div")
     const next_txt = document.createElement("p")
     const show_all_txt = document.createElement("p")
-
-
 
 
     next_in_queue_top_side_div.classList.add("next_in_queue_top_side_div")

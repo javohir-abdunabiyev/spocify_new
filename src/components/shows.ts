@@ -1,11 +1,12 @@
-import { getData } from "../lib/idnex";
-import { reload } from "../lib/reload";
+import { getData } from "../lib/getData";
+import { reload } from "./reload";
 import { rightAside } from "./rightaside";
 import { addPlayer } from "./player";
 
 const rightaside_place = document.querySelector(".right_aside_pl") as HTMLElement
 const center_section = document.querySelector(".center_section") as HTMLElement
 const player_section = document.querySelector(".player_section") as HTMLElement
+const tacks_right_aside = document.querySelector(".tacks_right_aside") as HTMLElement
 
 export function showsLoad(item: any) {
     const div = document.createElement("div");
@@ -23,8 +24,6 @@ export function showsLoad(item: any) {
     playbtn.classList.add("playbtn")
     publisherName.classList.add("publisher")
 
-    publisherName.innerHTML = item.publisher
-
     if (item.images) {
         img.src = item.images[0].url;
     } else if (item.album) {
@@ -36,17 +35,24 @@ export function showsLoad(item: any) {
     if (name.innerHTML.length > 40) {
         name.innerHTML = name.innerHTML.substring(0, 30) + '...';
     }
+
+    if(item.artists) {
+        publisherName.innerHTML = item.artists[0].name
+    } else if (item.owner) {
+        publisherName.innerHTML = item.owner.display_name
+    } else if (item.publisher) {
+        publisherName.innerHTML = item.publisher
+    }
+
+
     if(publisherName.innerHTML.length > 30) {
         publisherName.innerHTML = publisherName.innerHTML.substring(0, 20) + '...'
     }
 
-    if(!item.publisher) {
-        name.classList.add("publisher")
-        publisherName.style.display = "none"
-    }
 
 
-    playbtn_div.onclick = () => {
+    playbtn_div.onclick = (e) => {
+        e.stopPropagation();
         const trackInfo = {
             id: item.id,
             type: item.type + "s"
@@ -61,6 +67,9 @@ export function showsLoad(item: any) {
             })
     }
 
+
+
+
     const savedTrack = localStorage.getItem('currentTrack');
 
     if (savedTrack) {
@@ -71,12 +80,23 @@ export function showsLoad(item: any) {
             });
     }
 
-    if(center_section.style.width > "900px") {
-        img.classList.remove("showImg_bigger")
-        div.classList.remove("sectionsimgdiv_bigger")
-    } else if(center_section.style.width <= "900px") {
-        img.classList.add("showImg_bigger")
-        div.classList.add("sectionsimgdiv_bigger")
+
+    const width = parseFloat(center_section.style.width);
+    if (width > 900) {
+        img.classList.remove("showImg_bigger");
+        div.classList.remove("sectionsimgdiv_bigger");
+    } else {
+        img.classList.add("showImg_bigger");
+        div.classList.add("sectionsimgdiv_bigger");
+    }
+
+    div.onclick = () => {
+        const selectedTrack = {
+            id: item.id,
+            type: item.type + "s"
+        };
+        localStorage.setItem('selectedTrack', JSON.stringify(selectedTrack));
+        location.assign(`/src/pages/tracks/?id=${item.id}`)
     }
 
     playbtn_div.append(playbtn)
