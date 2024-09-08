@@ -1,5 +1,9 @@
-export function tracksTopside(item: any) {
+import { reload } from "./reload"
+import { tracksLoad } from "./tracksLoad"
 
+const playlist_tracks_place = document.querySelector(".playlist_tracks_place") as HTMLElement
+
+export function tracksTopside(item: any) {
     const top_side_div = document.createElement("div")
     const topside_img = document.createElement("img")
 
@@ -38,6 +42,12 @@ export function tracksTopside(item: any) {
         track_owner.innerHTML = item.owner.display_name
     } else if (item.publisher) {
         track_owner.innerHTML = item.publisher
+    }
+
+    if(item.tracks) {
+        reload(item.tracks.items, tracksLoad, playlist_tracks_place)
+    } else if (item.episodes) {
+        reload(item.episodes.items, tracksLoad, playlist_tracks_place)
     }
     
 

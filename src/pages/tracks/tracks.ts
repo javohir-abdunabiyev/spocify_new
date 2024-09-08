@@ -22,9 +22,7 @@ const right_aside_place = document.querySelector(".right_aside_place") as HTMLEl
 const left_aside = document.querySelector(".left_aside") as HTMLElement
 const headerPlace = document.querySelector(".headerPlace") as HTMLElement
 const tracks_section = document.querySelector(".tracks_section") as HTMLElement
-
 const selectedTrack = localStorage.getItem('selectedTrack')
-
 const savedTrack = localStorage.getItem('currentTrack');
 if (savedTrack) {
     const { id, type } = JSON.parse(savedTrack);
@@ -41,6 +39,7 @@ if(selectedTrack) {
         .then(res => {
             console.log(res);
             reload([res], tracksTopside, tracks_section)
+            
         })
 }
 

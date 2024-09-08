@@ -18,7 +18,6 @@ const center_section = document.querySelector(".center_section") as HTMLElement
 const left_aside_place = document.querySelector(".main_section") as HTMLElement
 const right_aside_place = document.querySelector(".right_aside_pl") as HTMLElement
 const header_place = document.querySelector(".header_place") as HTMLElement
-const anchors = document.querySelectorAll(".anchor")
 let slice_count = 5
 
 header(header_place)

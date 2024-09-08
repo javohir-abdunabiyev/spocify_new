@@ -8,7 +8,7 @@
     display: flex;
     gap: 20px;
     color: white;
-
+    margin-bottom: 40px;
 }
 
 .topsideTracks_img {
@@ -54,7 +54,7 @@
 }
 
 .backdrop {
-    background: linear-gradient(180deg, rgba(30,215,96,0.8) 0%, rgba(30,215,96,0.5) 100%);
+    background: linear-gradient(180deg, #d3d3d3 0%, #a9a9a9 50%, #404040 100%);
     width: 100%;
     height: 285px;
     position: absolute;
@@ -62,7 +62,31 @@
     left: 0;
     z-index: -1;
     pointer-events: none;
+    border-radius: 8px 8px 0 0 ;
 }
+
+.secondbgdrop {
+    background: linear-gradient(180deg, #4f4f4f 0%, #3a3a3a 100%); /* Ярче серый */
+    width: 100%;
+    height: 235px;
+    position: absolute;
+    top: 285px;
+    left: 0;
+    z-index: -2;
+    pointer-events: none;
+}
+
+.secondbgdrop::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #3a3a3a 0%, #121212 100%);
+    z-index: -1;
+}
+
 
 .center_section {
     position: relative;
@@ -120,13 +144,108 @@
 }
 
 .list_div {
+    cursor: pointer;
     display: flex;
     gap: 8px;
+    color: grey;
+    font-weight: 400;
+
 }
 
 .list_div:hover {
     color: white;
-    svg {
-        fill: white;
-    }
+}
+
+.mini_player {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 21px;
+}
+
+
+img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+
+.left_side_tracks_div {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.img_name_div_track {
+    display: flex;
+    width: 266px;
+}
+
+li {
+    list-style-type: none;
+}
+
+.trackName_track {
+    cursor: pointer;
+    color: white;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.trackName_track:hover {
+    text-decoration: underline;
+}
+
+.publisher_name_class {
+    cursor: pointer;
+    color: #b3b3b3;
+    font-weight: 400;
+    font-size: 0.875rem;
+    margin-top: 3px;
+}
+
+.publisher_name_class:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.albumName_cls {
+    cursor: pointer;
+    color: #b3b3b3;
+    font-weight: 400;
+    font-size: 0.875rem;
+    margin-right: 13px;
+}
+
+.albumName_cls:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.tracks_li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 8px;
+}
+
+.tracks_img_cls {
+    border-radius: 4px;
+}
+
+.right_side_div_cls {
+    display: flex;
+    align-items: center;
+    color: #b3b3b3;
+    font-weight: 400;
+    font-size: 0.875rem;
+}
+
+.added_at {
+    width: 133px;
+}
+
+.track_time {
+    width: 120px;
 }
