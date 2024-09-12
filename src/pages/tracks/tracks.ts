@@ -39,7 +39,6 @@ if(selectedTrack) {
         .then(res => {
             console.log(res);
             reload([res], tracksTopside, tracks_section)
-            
         })
 }
 

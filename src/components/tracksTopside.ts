@@ -48,6 +48,8 @@ export function tracksTopside(item: any) {
         reload(item.tracks.items, tracksLoad, playlist_tracks_place)
     } else if (item.episodes) {
         reload(item.episodes.items, tracksLoad, playlist_tracks_place)
+    } else if (item.album) {
+        reload([item], tracksLoad, playlist_tracks_place)
     }
     
 
