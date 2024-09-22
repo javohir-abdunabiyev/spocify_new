@@ -5,23 +5,29 @@ import { footerLoad } from "./components/footer";
 import { addleftAside } from "./components/leftaside";
 import { rightAside } from "./components/rightaside";
 import { header } from "./components/header";
+import { adaptedHeader } from "./components/adaptedheader";
+import { adaptedMenu } from "./components/adaptedMenu";
 
+location.assign("/")
 
 let token = localStorage.getItem("access_token");
-const rightaside_place = document.querySelector(".right_aside_pl") as HTMLElement
 const showsPlace = document.querySelector(".shows_Section") as HTMLElement
 const top_playlistsPlace = document.querySelector(".top_playlistsSection") as HTMLElement
 const popular_radio_place = document.querySelector(".popular_radio") as HTMLElement
 const rec_podbors_place = document.querySelector(".rec_podbors") as HTMLElement 
 const spwrapped_place = document.querySelector(".spwrapped_div") as HTMLElement 
 const main_page_footer = document.querySelector(".sectionsFooter") as HTMLElement
-const center_section = document.querySelector(".center_section") as HTMLElement
 const left_aside_place = document.querySelector(".main_section") as HTMLElement
 const right_aside_place = document.querySelector(".right_aside_pl") as HTMLElement
 const header_place = document.querySelector(".header_place") as HTMLElement
 const popular_artists_place = document.querySelector(".popular_artists") as HTMLElement
+const adapted_headerPlace = document.querySelector(".adapted_headerPlace") as HTMLElement
+const adapted_nav_menu = document.querySelector(".adapted_nav_menu") as HTMLElement
 
+adaptedMenu(adapted_nav_menu)
 header(header_place)
+adaptedHeader(adapted_headerPlace)
+
 
 if (!token) {
   location.assign("/src/pages/Login/")

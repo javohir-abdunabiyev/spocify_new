@@ -1004,3 +1004,100 @@ body {
   }
 }
 
+.adapted_menu svg {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  fill: white;
+}
+
+.adapted_headerPlace {
+  display: none;
+}
+
+.adaptedHeader {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+  color: white;
+  justify-content: space-between;
+}
+
+.menu_nav_div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  font-size: 0.6875rem;
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.menu_nav_div svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+}
+
+.navs_divs {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 8px;
+}
+
+.adapted_nav_menu {
+  display: none;
+  padding-top: 10px;
+}
+
+.sectionsFooter {
+  padding-bottom: 90px;
+}
+
+.adapted_player_place {
+  width: 100%;
+  top: 20px;
+  display: none;
+  img {
+    width: 24px;
+    height: 24px;
+  }
+  button {
+    background: none;
+    border: 0;
+  }
+}
+
+.adapted_player_div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: grey;
+  border-radius: 6px;
+  padding: 6px;
+}
+
+.img_name_div_adapted {
+  display: flex;
+  color: white;
+  gap: 8px;
+  img {
+    border-radius: 4px;
+  }
+}
+
+.adapted_track_cls {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.players_div_menu {
+  min-height: 72px;
+  max-height: 110px;
+}

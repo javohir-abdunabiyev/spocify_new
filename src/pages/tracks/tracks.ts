@@ -6,7 +6,6 @@ import { header } from "../../components/header.ts";
 import { tracksTopside } from "../../components/tracksTopside.ts";
 import { addminiplayer } from "../../components/miniplayer.ts";
 import { footerLoad } from "../../components/footer.ts";
-import { tracksLoad } from "../../components/tracksLoad.ts";
 
 
 let id: any = location.search.split('=')
