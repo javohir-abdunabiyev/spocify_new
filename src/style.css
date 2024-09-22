@@ -11,6 +11,8 @@ body {
   padding: 8px;
 }
 
+/* center_section */
+
 .sections {
   display: flex;
   width: 100%;
@@ -212,13 +214,15 @@ body {
 
 .center_section {
   max-width: 1200px;
-  min-width: 700px;
+  min-width: 550px;
   width: 100%;
   height: 641px;
   border-radius: 8px;
   padding: 0 20px;
   background-color: #121212;
 }
+
+/* sectionsFooter */
 
 .center_section_header {
   display: flex;
@@ -350,7 +354,7 @@ body {
   gap: 8px;
   align-items: center;
 }
-
+/* playbtn_div */
 
 .types_btn {
   display: flex;
@@ -382,10 +386,17 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  scrollbar-width: thin; /* Для Firefox */
-  scrollbar-color: grey #121212; /* Цвета для скроллбара и его фона */
-  /* scrollbar- */
-  /* scrollbar-width: 0; */
+  scrollbar-width: thin;
+  scrollbar-color: grey #121212;
+  section {
+    overflow-x: auto;
+    scrollbar-width: none;
+    height: 300px !important;
+    min-height: 300px;
+    width: 770px !important;
+    width: 100%;
+    margin-bottom: 0;
+  }
   h1 {
     font-weight: 700;
     font-size: 1.5rem;
@@ -403,6 +414,7 @@ body {
 }
 
 .showname {
+  text-align: left !important;
   font-weight: 400;
   font-size: 0.930rem;
   color: white;
@@ -410,23 +422,27 @@ body {
   margin-top: 10px;
 }
 
+.showname:hover {
+  text-decoration: underline;
+}
+
 .shows_Section {
   display: flex;
   margin-bottom: 60px;
 }
 
+
 .sectionsimgdiv {
   cursor: pointer;
+  text-align: left;
   position: relative;
-  display: flex;
   padding-block: 12px;
   padding-inline: 12px;
-  flex-direction: column;
-  min-width: 168px;
-  padding-bottom: 10px;
-  align-items: center;
   border-radius: 6px;
+  min-height: 250px;
+  max-height: 270px;
 }
+
 
 
 .playbtn_div {
@@ -438,7 +454,7 @@ body {
   justify-content: center;
   align-items: center;
   right: 20px;
-  top: 122px;
+  top: 105px;
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -488,6 +504,7 @@ body {
 }
 
 .publisher {
+  text-align: left !important;
   color: #b3b3b3;
   font-weight: 400;
   font-size: 0.850rem;
@@ -507,7 +524,6 @@ body {
 
 .rec_podbors {
   display: flex;
-  margin-bottom: 60px;
 }
 
 .spwrapped_div {
@@ -546,7 +562,8 @@ body {
 }
 
 .sectionsFooter {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   justify-content: center;
   gap: 30px;
   margin-top: 50px;
@@ -669,14 +686,11 @@ body {
 }
 
 .showImg_bigger {
-  width: 160px;
-  height: 160px;
   border-radius: 6px;
 }
 
 .sectionsimgdiv_bigger {
-  padding-block: 16px;
-  padding-inline: 14px;
+  padding: 16px 14px;
 }
 
 .for_names_addliketracks {
@@ -979,3 +993,14 @@ body {
     background: #b3b3b3;
   }
 }
+
+.popular_artists {
+  display: flex;
+  .sectionsimgdiv {
+    height: 250px;
+  }
+  .showImg {
+    border-radius: 50%;
+  }
+}
+

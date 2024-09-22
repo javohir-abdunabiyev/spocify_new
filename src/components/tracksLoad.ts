@@ -31,25 +31,46 @@ export function tracksLoad(item: any) {
         trackName.innerHTML = item.track.name
         track_duration.innerHTML = item.track.duration_ms
         publisherName.innerHTML = item.track.artists[0].name
-    } else if (item.name) {
+    } else if (item.type === "episode") {
         album_name.innerHTML = item.name
         img.src = item.images[0].url
         track_duration.innerHTML = item.duration_ms
         publisherName.innerHTML = ""
         img_name_div.style.width = "80px"
         album_name.style.width = "270px"
+    } else if (item.type === "album") {
+        img.src = item.images[0].url
+        album_name.innerHTML = item.name
+        track_duration.innerHTML = item.duration_ms
+        trackName.innerHTML = item.name
+    } else if (item.album.type === "album") {
+        img.src = item.album.images[0].url
+        album_name.innerHTML = item.name
+        track_duration.innerHTML = item.duration_ms
+        trackName.innerHTML = item.name
+    } 
+
+    if (album_name.innerHTML.length > 50) {
+        album_name.innerHTML = album_name.innerHTML.substring(0, 40) + '...';
     }
+    
 
     if(item.added_at) {
         added_at.innerHTML = item.added_at
-    } else {
+    } else if(item.release_date) {
         added_at.innerHTML = item.release_date
+    } else {
+        added_at.innerHTML = item.album.release_date
     }
 
 
 
     if(item.artists) {
-        publisherName.innerHTML = item.track.artists[0].name
+        if(item.track) {
+            publisherName.innerHTML = item.track.artists[0].name
+        } else {
+            publisherName.innerHTML = item.artists[0].name
+        }
     } else if (item.owner) {
         publisherName.innerHTML = item.track.owner.display_name
     } else if (item.publisher) {

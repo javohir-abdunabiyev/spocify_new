@@ -3,10 +3,9 @@ import { reload } from "./reload";
 import { rightAside } from "./rightaside";
 import { addPlayer } from "./player";
 
-const rightaside_place = document.querySelector(".right_aside_pl") as HTMLElement
 const center_section = document.querySelector(".center_section") as HTMLElement
 const player_section = document.querySelector(".player_section") as HTMLElement
-const tacks_right_aside = document.querySelector(".tacks_right_aside") as HTMLElement
+const rightaside_place = document.querySelector(".right_aside_pl") as HTMLElement
 
 export function showsLoad(item: any) {
     const div = document.createElement("div");
@@ -42,6 +41,9 @@ export function showsLoad(item: any) {
         publisherName.innerHTML = item.owner.display_name
     } else if (item.publisher) {
         publisherName.innerHTML = item.publisher
+    } else {
+        publisherName.innerHTML = "Исполнитель"
+        img.style.borderRadius = "50%"
     }
 
 
@@ -61,23 +63,9 @@ export function showsLoad(item: any) {
 
         getData(`/${item.type + "s"}/${item.id}`)
             .then(res => {
-                console.log(res);
                 reload([res], rightAside, rightaside_place)
                 reload([res], addPlayer, player_section)
             })
-    }
-
-
-
-
-    const savedTrack = localStorage.getItem('currentTrack');
-
-    if (savedTrack) {
-        const { id, type } = JSON.parse(savedTrack);
-        getData(`/${type}/${id}`)
-            .then(res => {
-                reload([res], rightAside, rightaside_place);
-            });
     }
 
 

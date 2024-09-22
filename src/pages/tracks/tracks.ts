@@ -5,6 +5,8 @@ import { reload } from "../../components/reload.ts";
 import { header } from "../../components/header.ts";
 import { tracksTopside } from "../../components/tracksTopside.ts";
 import { addminiplayer } from "../../components/miniplayer.ts";
+import { footerLoad } from "../../components/footer.ts";
+import { tracksLoad } from "../../components/tracksLoad.ts";
 
 
 let id: any = location.search.split('=')
@@ -22,15 +24,23 @@ const right_aside_place = document.querySelector(".right_aside_place") as HTMLEl
 const left_aside = document.querySelector(".left_aside") as HTMLElement
 const headerPlace = document.querySelector(".headerPlace") as HTMLElement
 const tracks_section = document.querySelector(".tracks_section") as HTMLElement
+const pages_footer = document.querySelector(".sectionsFooter") as HTMLElement
 const selectedTrack = localStorage.getItem('selectedTrack')
 const savedTrack = localStorage.getItem('currentTrack');
+
 if (savedTrack) {
     const { id, type } = JSON.parse(savedTrack);
     getData(`/${type}/${id}`)
         .then(res => {
             reload([res], rightAside, right_aside_place);
         });
+} else {
+    getData("/shows/1WErgoXiZwgctkHLzqU6nf")
+    .then(res => {
+        reload([res], rightAside, right_aside_place)
+    })
 }
+
 
 
 if(selectedTrack) {
@@ -40,8 +50,14 @@ if(selectedTrack) {
             console.log(res);
             reload([res], tracksTopside, tracks_section)
         })
+        getData(`/artists/${id}/albums`)
+        .then(res => {
+            console.log(res);
+            reload(res.items, tracksTopside, tracks_section)
+        }
+        )
 }
-
 addminiplayer(mini_player)
 header(headerPlace)
 addleftAside(left_aside)
+footerLoad(pages_footer)

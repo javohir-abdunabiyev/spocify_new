@@ -23,17 +23,10 @@ export function rightAside(item: any) {
     const sam_ispolnitel = document.createElement("a")
     const producer_txt = document.createElement("p")
     const subscribe_btn = document.createElement("button")
-    const next_in_queue_div = document.createElement("div")
-    const next_in_queue_top_side_div = document.createElement("div")
-    const next_txt = document.createElement("p")
     const show_all_txt = document.createElement("p")
 
 
-    next_in_queue_top_side_div.classList.add("next_in_queue_top_side_div")
     show_all_txt.classList.add("show_all_queue_text")
-    next_txt.classList.add("next_text")
-    next_in_queue_div.classList.add("svedeniya_div")
-    next_in_queue_div.classList.add("next_in_queue_div")
     aside_place.classList.add("svedeniya_aside")
     ispolnitel_sub_div.classList.add("ispolnitel_sub_div")
     subscribe_btn.classList.add("subscribe_btn")
@@ -62,8 +55,6 @@ export function rightAside(item: any) {
     show_all_svedeniya.innerHTML = "Показать все"
     producer_txt.innerHTML = "Основной Исполнитель, Композитор"
     subscribe_btn.innerHTML = "Подписаться"
-    next_txt.innerHTML = "Далее в очереди"
-    show_all_txt.innerHTML = "Показать очередь"
     
     
     if (item.album) {
@@ -90,8 +81,6 @@ export function rightAside(item: any) {
         sam_ispolnitel.innerHTML = item.publisher
     }
 
-    next_in_queue_top_side_div.append(next_txt, show_all_txt)
-    next_in_queue_div.append(next_in_queue_top_side_div)
     ispolnitel_div.append(sam_ispolnitel, producer_txt)
     ispolnitel_sub_div.append(ispolnitel_div, subscribe_btn)
     svedeniya_top_side_div.append(svedeniya_h1, show_all_svedeniya)
@@ -101,7 +90,7 @@ export function rightAside(item: any) {
     close_aside.append(close_aside_img)
     second_div.append(settings, close_aside)
     topside_div.append(track_name, second_div)
-    aside_place.append(topside_div, track_img, for_names_addliketracks, svedeniya, next_in_queue_div)
+    aside_place.append(topside_div, track_img, for_names_addliketracks, svedeniya)
 
     return aside_place
 }

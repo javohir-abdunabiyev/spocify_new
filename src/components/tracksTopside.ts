@@ -22,6 +22,10 @@ export function tracksTopside(item: any) {
     spocify_txt.innerHTML = "Spocify • "
     spocify_logo.src = "/img/spocifyLogo.jpeg"
 
+    if (track_name.innerHTML.length > 25) {
+        track_name.innerHTML = track_name.innerHTML.substring(0, 20) + '...';
+    }
+
     if(item.tracks) {
         tracksAmount.innerHTML = item.tracks.total
         tracks_amount_type_txt.innerHTML = "Треков"
@@ -50,6 +54,8 @@ export function tracksTopside(item: any) {
         reload(item.episodes.items, tracksLoad, playlist_tracks_place)
     } else if (item.album) {
         reload([item], tracksLoad, playlist_tracks_place)
+    } else {
+        reload(item.itmes, tracksLoad, playlist_tracks_place)
     }
     
 

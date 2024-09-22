@@ -1,0 +1,82 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.categs_img_place {
+    position: relative;
+}
+
+.categs_img {
+    cursor: pointer;
+    width: 245px;
+    height: 162px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.categs_place {
+    display: grid;
+    grid-template-columns: repeat(3, 245px);
+    gap: 22px;
+}
+
+.categs_place_div {
+    height: 592px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: grey #121212;
+    background-color: #121212;
+}
+
+.categs_txt {
+    margin-top: 100px;
+    color: white;
+    font-weight: 700;
+    text-wrap: balance;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.categs_name {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    right: 30px;
+    color: white;
+    font-weight: 700;
+    text-wrap: balance;
+    font-size: 1.3rem;
+}
+
+.search_inp {
+    cursor: pointer;
+    border: 0;
+    width: 490px;
+    height: 48px;
+    padding-left: 20px;
+    font-size: 1rem;
+    border-radius: 30px;
+    background-color: #1f1f1f;
+    color: white;
+}
+
+
+
+.search_inp:focus {
+    cursor: text;
+}
+
+.search_inp::placeholder {
+    color: #b3b3b3;
+    font-weight: 400;
+}
+
+.search_result_place {
+    display: grid;
+    grid-template-columns: repeat(4, 188px);
+    justify-content: center;
+}
