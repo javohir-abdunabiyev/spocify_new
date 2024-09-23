@@ -1,0 +1,114 @@
+@media(max-width: 1300px) {
+    .right_aside_place {
+        display: none;
+    }
+    .top_side_div {
+        margin-top: 0px;
+    }
+    .ol_footer_place {
+        height: 278px;
+    }
+}
+
+@media(max-width: 1200px) {
+    .right_aside_place {
+        display: none;
+    }
+    .added_at {
+        display: none;
+    }
+    .right_side_div_cls {
+        text-align: right;
+    }
+}
+
+@media(max-width: 992px) {
+    .left_aside {
+        display: none;
+    }
+    .tracks_li {
+        gap: 110px;
+    }
+    .left_side_tracks_div {
+        gap: 75px;
+    }
+    .center_section_header {
+        display: none;
+    }
+    .top_side_div {
+        margin-top: 28px;
+        margin-bottom: 25px;
+    }
+    .ol_footer_place {
+        height: 314px;
+    }    
+}
+
+
+@media (max-width:768px) {
+    .albumName_cls {
+        display: none;
+    }
+    .center_section {
+        overflow-y: scroll;
+    }
+    .ol_footer_place {
+        overflow-y: unset;
+        overflow-x: unset;
+    }
+    .sectionsFooter {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:576px) {
+    .top_side_div {
+        display: block;
+    }
+    .tracks_section {
+        display: flex;
+        justify-content: center;
+    }
+    .center_section {
+        max-width: 576px;
+        min-width: 300px;
+    }
+    .topsideTracks_img {
+        width: 160px;
+        height: 160px;
+    }
+    .topsideTrName {
+        font-size: 1.4rem;
+        margin-bottom: 0;
+    }
+    .miniplayer_playBtn {
+        width: 45px;
+        height: 45px;
+        padding: 15px;
+    }
+    .addtomediatekBtn svg {
+        width: 25px;
+    }
+    .menu_dots svg {
+        width: 25px;
+    }
+    .list_div {
+        display: none;
+    }
+    .tracks_li {
+        gap: 0;
+    }
+    .tracks_img_cls {
+        width: 35px;
+        height: 35px;
+    }
+    .trackName_track {
+        font-size: 0.8rem;
+    }
+    .publisher_name_class {
+        font-size: 0.8rem;
+    }
+    .sectionsFooter {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

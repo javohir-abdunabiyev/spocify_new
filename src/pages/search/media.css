@@ -8,7 +8,7 @@
     .categs_place {
         grid-template-columns: repeat(3, 245px);
     }
-    .right_aside_place {
+    .right_aside_pl {
         display: none;
     }
 }
@@ -20,6 +20,9 @@
     .categs_img {
         width: 280px;
         height: 200px;
+    }
+    .player_range {
+        width: 300px !important;
     }
 }
 
@@ -46,6 +49,15 @@
     .categs_img {
         width: 245px;
         height: 162px;
+    }
+    .player_section {
+        display: none;
+    }
+    .adapted_nav_menu {
+        display: block;
+    }
+    .adapted_player_place {
+        display: block;
     }
 }
 

@@ -23,7 +23,7 @@
 }
 
 .content_div {
-    height: 641px;
+    height: 564px;
     overflow-x: hidden;
     scroll-behavior: smooth;
     scrollbar-width: thin;
@@ -78,4 +78,8 @@
     display: grid;
     grid-template-columns: repeat(4, 167px);
     justify-content: center;
+}
+
+.adapted_headerPlace {
+    display: block;
 }

@@ -54,8 +54,6 @@ export function showsLoad(item: any) {
         publisherName.innerHTML = publisherName.innerHTML.substring(0, 20) + '...'
     }
 
-
-
     playbtn_div.onclick = (e) => {
         e.stopPropagation();
         const trackInfo = {
