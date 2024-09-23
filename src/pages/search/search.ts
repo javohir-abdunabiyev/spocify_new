@@ -4,6 +4,9 @@ import { rightAside } from "../../components/rightaside";
 import { getData } from "../../lib/getData";
 import { categLoad } from "../../components/categories";
 import { showsLoad } from "../../components/shows";
+import { footerLoad } from "../../components/footer";
+import { adaptedMenu } from "../../components/adaptedMenu";
+import { addPlayer } from "../../components/player";
 
 location.assign("/src/pages/search/")
 
@@ -12,6 +15,11 @@ const right_aside_place = document.querySelector(".right_aside_place") as HTMLEl
 const categs_place = document.querySelector(".categs_place") as HTMLElement
 const search_inp = document.querySelector(".search_inp") as HTMLInputElement
 const search_result_place = document.querySelector(".search_result_place") as HTMLElement
+const sectionsFooter = document.querySelector(".sectionsFooter") as HTMLElement
+const player_section = document.querySelector(".player_section") as HTMLElement
+
+
+
 
 
 getData("/shows/1WErgoXiZwgctkHLzqU6nf")
@@ -38,6 +46,7 @@ if (savedTrack) {
     getData(`/${type}/${id}`)
         .then(res => {
             reload([res], rightAside, right_aside_place);
+            reload([res], addPlayer, player_section)
         });
 } else {
     getData("/shows/1WErgoXiZwgctkHLzqU6nf")
@@ -72,5 +81,5 @@ search_inp.onkeyup = debouncedSearch;
 
 
 
-
+footerLoad(sectionsFooter)
 addleftAside(left_aside)

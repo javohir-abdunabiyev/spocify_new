@@ -11,8 +11,6 @@ body {
   padding: 8px;
 }
 
-/* center_section */
-
 .sections {
   display: flex;
   width: 100%;
@@ -1060,8 +1058,8 @@ body {
 }
 
 .adapted_player_place {
+  position: relative;
   width: 100%;
-  top: 20px;
   display: none;
   img {
     width: 24px;
@@ -1074,6 +1072,8 @@ body {
 }
 
 .adapted_player_div {
+  position: absolute;
+  bottom: 2px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1101,3 +1101,4 @@ body {
   min-height: 72px;
   max-height: 110px;
 }
+

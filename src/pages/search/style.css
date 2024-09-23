@@ -22,9 +22,8 @@
     gap: 22px;
 }
 
-.categs_place_div {
-    height: 592px;
-    overflow-y: scroll;
+.content_div {
+    height: 641px;
     overflow-x: hidden;
     scroll-behavior: smooth;
     scrollbar-width: thin;
@@ -53,6 +52,7 @@
 }
 
 .search_inp {
+    margin-top: 20px;
     cursor: pointer;
     border: 0;
     width: 490px;
@@ -62,9 +62,8 @@
     border-radius: 30px;
     background-color: #1f1f1f;
     color: white;
+    margin-bottom: 20px;
 }
-
-
 
 .search_inp:focus {
     cursor: text;
@@ -77,6 +76,6 @@
 
 .search_result_place {
     display: grid;
-    grid-template-columns: repeat(4, 188px);
+    grid-template-columns: repeat(4, 167px);
     justify-content: center;
 }

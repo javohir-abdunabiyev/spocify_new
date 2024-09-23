@@ -38,6 +38,10 @@
     .adapted_player_place {
         display: block;
     }
+    .center_section {
+        max-height: 641px !important;
+        min-height: 500px !important;
+    }
 }
 
 @media (max-width:768px) {
