@@ -32,12 +32,17 @@ export function tracksTopside(item: any) {
     } else if (item.episodes) {
         tracksAmount.innerHTML = item.episodes.total
         tracks_amount_type_txt.innerHTML = "Эпизодов"
+    } else {
+        tracksAmount.innerHTML = item.total
+        tracks_amount_type_txt.innerHTML = "Подписчиков"
     }
 
     if (item.images) {
         topside_img.src = item.images[0].url;
     } else if (item.album) {
         topside_img.src = item.album.images[0].url;
+    } else {
+        topside_img.src = item.images[0].url;
     }
 
     if(item.artists) {
@@ -54,8 +59,6 @@ export function tracksTopside(item: any) {
         reload(item.episodes.items, tracksLoad, playlist_tracks_place)
     } else if (item.album) {
         reload([item], tracksLoad, playlist_tracks_place)
-    } else {
-        reload(item.itmes, tracksLoad, playlist_tracks_place)
     }
     
 

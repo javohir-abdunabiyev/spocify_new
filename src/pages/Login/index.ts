@@ -1,10 +1,10 @@
 const loginBtn = document.querySelector('a') as HTMLAnchorElement
 
-const CLIENT_ID = "617c6261c1e64cb598313397af4c08b1";
-const REDIRECT_URI = "http://localhost:5173/";
-const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
-const RESPONSE_TYPE = "token";
-const SCOPE = "playlist-modify-public";
+export const CLIENT_ID = "617c6261c1e64cb598313397af4c08b1";
+export const REDIRECT_URI = "http://localhost:5173/";
+export const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
+export const RESPONSE_TYPE = "token";
+export const SCOPE = "playlist-modify-public";
 
 // Получаем токен из URL после перенаправления
 const hash = window.location.hash;

@@ -8,6 +8,9 @@
     .ol_footer_place {
         height: 278px;
     }
+    .adapted_nav_menu {
+        display: none;
+    }
 }
 
 @media(max-width: 1200px) {
@@ -19,6 +22,9 @@
     }
     .right_side_div_cls {
         text-align: right;
+    }
+    .sectionsFooter {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
@@ -41,7 +47,13 @@
     }
     .ol_footer_place {
         height: 314px;
-    }    
+    }
+    .adapted_nav_menu {
+        display: block;
+    }
+    .player_section {
+        display: none;
+    }
 }
 
 
@@ -64,10 +76,6 @@
 @media (max-width:576px) {
     .top_side_div {
         display: block;
-    }
-    .tracks_section {
-        display: flex;
-        justify-content: center;
     }
     .center_section {
         max-width: 576px;

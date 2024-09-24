@@ -1,3 +1,9 @@
+@media(max-width: 1400px) {
+    .menuAdapted {
+        display: none;
+    }
+}
+
 @media(max-width: 1200px) {
     .right_aside_pl {
         display: none;
@@ -41,6 +47,9 @@
     .center_section {
         max-height: 641px !important;
         min-height: 500px !important;
+    }
+    .menuAdapted {
+        display: flex;
     }
 }
 

@@ -1,3 +1,7 @@
+import { AUTH_ENDPOINT, CLIENT_ID, REDIRECT_URI, RESPONSE_TYPE, SCOPE } from "../pages/Login";
+
+
+
 export function header(place: any) {
     const header = document.createElement('header');
     header.className = 'center_section_header';
@@ -42,9 +46,18 @@ export function header(place: any) {
     const avatarImg = document.createElement('img');
     avatarImg.src = '/img/avatar.svg';
     avatarImg.alt = '';
+
+    const exitAcc = document.createElement("button")
+    const excit_anchor = document.createElement("a")
+    excit_anchor.classList.add("excit_anchor")
+    excit_anchor.innerHTML = "E"
+    excit_anchor.href = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;
+    exitAcc.classList.add("avatarBtn")
+
+    exitAcc.append(excit_anchor)
     somethingNewButton.append(svgDiv)
     avatarButton.append(avatarImg);
-    appPremiumBtns.append(premiumButton, loadAppLink, somethingNewButton, avatarButton);
+    appPremiumBtns.append(premiumButton, loadAppLink, somethingNewButton, avatarButton, exitAcc);
     header.append(latestPagesNav, appPremiumBtns);
     place.append(header)
 }

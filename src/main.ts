@@ -7,6 +7,9 @@ import { rightAside } from "./components/rightaside";
 import { header } from "./components/header";
 import { adaptedHeader } from "./components/adaptedheader";
 import { adaptedMenu } from "./components/adaptedMenu";
+import { AUTH_ENDPOINT, CLIENT_ID, REDIRECT_URI, RESPONSE_TYPE, SCOPE } from "./pages/Login";
+
+
 
 location.assign("/")
 
@@ -23,6 +26,9 @@ const header_place = document.querySelector(".header_place") as HTMLElement
 const popular_artists_place = document.querySelector(".popular_artists") as HTMLElement
 const adapted_headerPlace = document.querySelector(".adapted_headerPlace") as HTMLElement
 const adapted_nav_menu = document.querySelector(".adapted_nav_menu") as HTMLElement
+const close_btn = document.querySelector(".close") as HTMLElement
+const menuAdapted = document.querySelector(".menuAdapted") as HTMLElement
+const exitAcc = document.querySelector(".exitAcc") as HTMLAnchorElement
 
 adaptedMenu(adapted_nav_menu)
 header(header_place)
@@ -84,6 +90,11 @@ getData("/search?q=a&type=artist&limit=50")
       reload(res.artists.items.slice(0, 20), showsLoad, popular_artists_place)
     })
 
+close_btn.onclick = () => {
+  menuAdapted.classList.remove("active_menuAdapted")
+}
+
+exitAcc.href = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;
 
 footerLoad(main_page_footer)
 addleftAside(left_aside_place)

@@ -6,6 +6,8 @@ import { header } from "../../components/header.ts";
 import { tracksTopside } from "../../components/tracksTopside.ts";
 import { addminiplayer } from "../../components/miniplayer.ts";
 import { footerLoad } from "../../components/footer.ts";
+import { adaptedMenu } from "../../components/adaptedMenu.ts";
+import { tracksLoad } from "../../components/tracksLoad.ts";
 
 
 let id: any = location.search.split('=')
@@ -26,6 +28,9 @@ const tracks_section = document.querySelector(".tracks_section") as HTMLElement
 const pages_footer = document.querySelector(".sectionsFooter") as HTMLElement
 const selectedTrack = localStorage.getItem('selectedTrack')
 const savedTrack = localStorage.getItem('currentTrack');
+const adapted_nav_menu = document.querySelector(".adapted_nav_menu") as HTMLElement
+const playlist_tracks_place = document.querySelector(".playlist_tracks_place") as HTMLElement
+
 
 if (savedTrack) {
     const { id, type } = JSON.parse(savedTrack);
@@ -52,7 +57,7 @@ if(selectedTrack) {
         getData(`/artists/${id}/albums`)
         .then(res => {
             console.log(res);
-            reload(res.items, tracksTopside, tracks_section)
+            reload(res.items, tracksLoad, playlist_tracks_place)
         }
         )
 }
@@ -60,3 +65,4 @@ addminiplayer(mini_player)
 header(headerPlace)
 addleftAside(left_aside)
 footerLoad(pages_footer)
+adaptedMenu(adapted_nav_menu)

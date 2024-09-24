@@ -9,6 +9,7 @@ body {
   font-family: "Roboto", sans-serif;
   height: 100vh;
   padding: 8px;
+  overflow-x: hidden;
 }
 
 .sections {
@@ -1102,3 +1103,42 @@ body {
   max-height: 110px;
 }
 
+.menuAdapted {
+  position: absolute;
+  color: white;
+  transition: .3s ease-in;
+  top: 0;
+  right: -600px;
+  width: 300px;
+  height: 100vh;
+  background-color: black;
+}
+
+.active_menuAdapted {
+  position: absolute;
+  transition: .3s ease-in;
+  right: 0;
+}
+
+.close {
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  font-size: 36px;
+}
+
+.exitAcc {
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+}
+
+.exitDiv {
+  margin-top: 100px;
+  margin-left: 20px;
+}
+
+.avatarBtn {
+  color: white;
+}

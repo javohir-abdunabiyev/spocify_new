@@ -1,22 +1,14 @@
 export function tracksLoad(item: any) {
 
     const place = document.createElement("div")
-
     const li = document.createElement("li")
-
-    // const count = document.createElement("div")
-
-
     const left_side_div = document.createElement("div")
-
     const img_name_div = document.createElement("div")
     const img = document.createElement("img")
     const name_publisher_div = document.createElement("div")
     const trackName = document.createElement("p")
     const publisherName = document.createElement("p")
-
     const album_name = document.createElement("p")
-
     const right_side_div = document.createElement("div")
     let added_at: any = document.createElement("p")
 
@@ -48,7 +40,12 @@ export function tracksLoad(item: any) {
         album_name.innerHTML = item.name
         track_duration.innerHTML = item.duration_ms
         trackName.innerHTML = item.name
-    } 
+    } else {
+        img.src = item.images[0].url
+        album_name.innerHTML = item.name
+        trackName.innerHTML = item.name
+        track_duration.style.display = "none"
+    }
 
     if (album_name.innerHTML.length > 50) {
         album_name.innerHTML = album_name.innerHTML.substring(0, 40) + '...';
