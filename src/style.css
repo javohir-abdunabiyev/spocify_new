@@ -1142,3 +1142,9 @@ body {
 .avatarBtn {
   color: white;
 }
+
+.play_Btn_tracks {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}

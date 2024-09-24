@@ -2,6 +2,7 @@ export function tracksLoad(item: any) {
 
     const place = document.createElement("div")
     const li = document.createElement("li")
+    const play_Btn = document.createElement("img")
     const left_side_div = document.createElement("div")
     const img_name_div = document.createElement("div")
     const img = document.createElement("img")
@@ -83,17 +84,34 @@ export function tracksLoad(item: any) {
 
     const date = new Date(added_at.innerHTML);
 
-    // Извлекаем день, месяц и год
+
     const day = date.getUTCDate();
     const month = date.toLocaleString('ru-RU', { month: 'long' });
     const year = date.getUTCFullYear();
 
-    // Собираем в нужном формате
+
     const formattedDate = `${day} ${month} ${year} г.`;
 
     added_at.innerHTML = formattedDate
 
+    play_Btn.src = "/img/playbtn.png"
+    play_Btn.classList.add("play_Btn_tracks")
 
+    play_Btn.onclick = () => {
+        const trackInfo = {
+            id: item.id,
+            type: item.type + "s"
+        };
+        localStorage.setItem('currentTrack', JSON.stringify(trackInfo));
+
+        if(play_Btn.classList.contains("play")) {
+            play_Btn.src = "/img/pausebtn.png"
+            play_Btn.classList.remove("play")
+        } else {
+            play_Btn.src = "/img/playbtn.png"
+            play_Btn.classList.add("play")
+        }
+    }
 
     place.classList.add("tracks_place_page")
     track_time.classList.add("track_time")
@@ -111,7 +129,7 @@ export function tracksLoad(item: any) {
     name_publisher_div.append(trackName, publisherName)
     img_name_div.append(img, name_publisher_div)
     left_side_div.append(img_name_div, album_name)
-    li.append(left_side_div, right_side_div)
+    li.append(play_Btn, left_side_div, right_side_div)
     place.append(li)
 
     return place

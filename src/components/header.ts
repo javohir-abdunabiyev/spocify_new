@@ -1,7 +1,5 @@
 import { AUTH_ENDPOINT, CLIENT_ID, REDIRECT_URI, RESPONSE_TYPE, SCOPE } from "../pages/Login";
 
-
-
 export function header(place: any) {
     const header = document.createElement('header');
     header.className = 'center_section_header';
